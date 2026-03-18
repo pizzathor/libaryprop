@@ -11,6 +11,7 @@ package hammer.datastuctproject;
 public class DataStuctProject {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        booksGui gui = new booksGui(new javax.swing.JFrame(), true);
+        gui.setVisible(true);
     }
 }

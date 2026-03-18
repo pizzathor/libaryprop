@@ -48,19 +48,37 @@ public class handling {
         return person;
     }
     public String gettingFromQueue(){
-        return meQueue.front();
+        if(meQueue.isEmpty()){
+                return "nada";
+        }else{
+            return meQueue.front();
+        }
     }
     public String getBookNameArray(int number){
-        return meArray.get(number).getName();
+        if(!(meArray.isEmpty())){
+            return meArray.get(number).getName();
+        }else
+            return "nothing";
+        
     }
     public String getBookGenreArray(int number){
-        return meArray.get(number).getGenre();
+        if(!(meArray.isEmpty())){
+            return meArray.get(number).getName();
+        }else
+            return "nothing";
     }
     public int getBookIdArray(int number){
-        return meArray.get(number).getId();
+        if(!(meArray.isEmpty())){
+            return meArray.get(number).getId();
+        }else
+            return 0;
     }
     public void holdBookStack(){
-        heldBook = meStack.pop();
+        if(meStack.isEmpty()){
+            heldBook = settingBooks(0, "nada", "nada");
+        }else{
+            heldBook = meStack.pop();
+        }
     }
     public String heldBookName(){
         return heldBook.getName();
